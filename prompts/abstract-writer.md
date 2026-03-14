@@ -5,7 +5,7 @@ title: Abstract Writer
 description: "Writes a structured abstract for a research paper"
 tags: []
 connections:
-  - target: anthropic-claude
+  - target: llm-service
     type: runs_on
 ---
 

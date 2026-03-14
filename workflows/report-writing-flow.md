@@ -63,3 +63,47 @@ Invoke the **data-interpretation** skill to identify patterns, assess significan
 - If the outline lacks sufficient depth, provide more detail on the research questions and methodology
 - If peer review flags fundamental structural issues, return to Stage 1 rather than patching
 - If data interpretation reveals unexpected findings, consider whether they warrant revising the research questions
+
+## Inputs
+
+| Name | Required | Description | Example |
+|------|----------|-------------|---------|
+| `{{input.research_topic}}` | Yes | Research topic | `Paste the relevant brief, notes, source material, or dataset here.` |
+| `{{input.research_questions}}` | Yes | research questions | `Paste the relevant brief, notes, source material, or dataset here.` |
+| `{{input.methodology}}` | Yes | methodology | `Paste the relevant brief, notes, source material, or dataset here.` |
+| `{{input.completed_draft_or_near}}` | No | Completed draft or near-final content | `Paste the relevant brief, notes, source material, or dataset here.` |
+
+## Outputs
+
+| Name | Description |
+|------|-------------|
+| Detailed structural outline | Detailed structural outline |
+| Publication-ready abstract | Publication-ready abstract |
+| Annotated review | Annotated review with specific improvement suggestions |
+| Interpretive summary for incorporation into the report | Interpretive summary for incorporation into the report |
+
+## Setup
+
+Before running this workflow:
+
+1. No external services required — paste your content directly and provide any supporting context as inputs or source nodes.
+2. Review the included documents, assets, or source nodes and customise them to match your team, brand, or domain conventions where needed.
+3. No specific AI provider or API key is required beyond your configured skrptiq LLM provider.
+
+## Provider Notes
+
+- Most stages work with any capable model; stronger models usually improve synthesis, judgement, and writing quality.
+- Extraction, classification, and formatting steps generally run well on smaller or faster models.
+- Because there are no vendor-specific integrations here, provider choice is mostly a trade-off between speed, quality, and cost.
+
+## Example Input
+
+To test this workflow immediately after import:
+
+```
+Research Topic: "Paste the relevant brief, notes, source material, or dataset here."
+Research Questions: "Paste the relevant brief, notes, source material, or dataset here."
+Methodology: "Paste the relevant brief, notes, source material, or dataset here."
+Completed Draft Or Near: "Paste the relevant brief, notes, source material, or dataset here."
+```
+

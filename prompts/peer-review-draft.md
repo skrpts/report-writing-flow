@@ -5,7 +5,7 @@ title: Peer Review Draft
 description: "Drafts constructive peer review feedback"
 tags: [Needs Review]
 connections:
-  - target: anthropic-claude
+  - target: llm-service
     type: runs_on
 ---
 

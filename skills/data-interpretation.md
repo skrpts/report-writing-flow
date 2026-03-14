@@ -5,7 +5,7 @@ title: Data Interpretation
 description: "Analyses findings and identifies patterns"
 tags: []
 connections:
-  - target: openai-gpt4
+  - target: llm-service
     type: runs_on
   - target: thematic-coding-framework
     type: references

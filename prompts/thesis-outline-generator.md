@@ -5,7 +5,7 @@ title: Thesis Outline Generator
 description: "Creates a detailed thesis or dissertation outline"
 tags: []
 connections:
-  - target: anthropic-claude
+  - target: llm-service
     type: runs_on
 ---
 
