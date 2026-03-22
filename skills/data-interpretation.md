@@ -3,7 +3,7 @@ type: skill
 id: data-interpretation
 title: Data Interpretation
 description: "Analyses findings and identifies patterns"
-tags: []
+tags: [Production]
 connections:
   - target: llm-service
     type: runs_on

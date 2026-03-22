@@ -3,7 +3,7 @@ type: prompt
 id: thesis-outline-generator
 title: Thesis Outline Generator
 description: "Creates a detailed thesis or dissertation outline"
-tags: []
+tags: [Production]
 connections:
   - target: llm-service
     type: runs_on
@@ -17,10 +17,10 @@ You are a thesis supervisor. Generate a detailed chapter-by-chapter outline for 
 - Key sources to engage with
 
 ## Research Topic
-{{topic}}
+{{input.research_topic}}
 
 ## Research Questions
-{{questions}}
+{{input.research_questions}}
 
 ## Methodology
-{{methodology}}
+{{input.methodology}}

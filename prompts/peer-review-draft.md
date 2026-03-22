@@ -3,7 +3,7 @@ type: prompt
 id: peer-review-draft
 title: Peer Review Draft
 description: "Drafts constructive peer review feedback"
-tags: [Needs Review]
+tags: [Production]
 connections:
   - target: llm-service
     type: runs_on
@@ -20,4 +20,4 @@ You are an experienced academic reviewer. Provide constructive peer review feedb
 Be specific, cite section/page numbers, and suggest concrete improvements.
 
 ## Manuscript
-{{manuscript}}
+Use the completed draft or near-final content provided for the abstract stage.

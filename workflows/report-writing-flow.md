@@ -3,7 +3,7 @@ type: workflow
 id: report-writing-flow
 title: Report Writing Flow
 description: "Outline, draft sections, peer review, and format"
-tags: [Draft]
+tags: [Production]
 connections:
   - target: thesis-outline-generator
     type: uses
@@ -68,10 +68,10 @@ Invoke the **data-interpretation** skill to identify patterns, assess significan
 
 | Name | Required | Description | Example |
 |------|----------|-------------|---------|
-| `{{input.research_topic}}` | Yes | Research topic | `Paste the relevant brief, notes, source material, or dataset here.` |
-| `{{input.research_questions}}` | Yes | research questions | `Paste the relevant brief, notes, source material, or dataset here.` |
-| `{{input.methodology}}` | Yes | methodology | `Paste the relevant brief, notes, source material, or dataset here.` |
-| `{{input.completed_draft_or_near}}` | No | Completed draft or near-final content | `Paste the relevant brief, notes, source material, or dataset here.` |
+| `{{input.research_topic}}` | Yes | The research topic for the thesis or report | `The impact of remote working on team cohesion in UK tech startups` |
+| `{{input.research_questions}}` | Yes | The research questions guiding the report | `How does remote working affect team communication frequency?` |
+| `{{input.methodology}}` | Yes | The research methodology used | `Qualitative case study with semi-structured interviews` |
+| `{{input.completed_draft_or_near}}` | No | Completed draft or near-final content for abstract writing and peer review | `Paste your full draft here` |
 
 ## Outputs
 

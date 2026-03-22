@@ -3,7 +3,7 @@ type: prompt
 id: abstract-writer
 title: Abstract Writer
 description: "Writes a structured abstract for a research paper"
-tags: []
+tags: [Production]
 connections:
   - target: llm-service
     type: runs_on
@@ -19,4 +19,4 @@ You are an academic writing expert. Write a structured abstract (200–300 words
 Use precise, jargon-appropriate language. Avoid citations in the abstract.
 
 ## Paper Content
-{{paper_content}}
+{{input.completed_draft_or_near}}
