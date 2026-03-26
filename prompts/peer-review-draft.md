@@ -20,4 +20,4 @@ You are an experienced academic reviewer. Provide constructive peer review feedb
 Be specific, cite section/page numbers, and suggest concrete improvements.
 
 ## Manuscript
-Use the completed draft or near-final content provided for the abstract stage.
+{{steps.abstract-writer.output}}
