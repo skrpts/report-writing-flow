@@ -22,8 +22,12 @@ tags:
 
 # --- Security & Access ---
 requires:
-  services: []
-  permissions: []
+  services:
+    - "llm-service"
+  permissions:
+    - "network:doi.org"
+    - "network:www.who.int"
+    - "network:www.ons.gov.uk"
   data_handling: []
 
 # --- Contents ---
