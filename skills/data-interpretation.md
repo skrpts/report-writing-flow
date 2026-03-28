@@ -2,29 +2,28 @@
 type: skill
 id: data-interpretation
 title: Data Interpretation
-description: "Analyses findings and identifies patterns"
+description: "Analyses research findings and identifies patterns, trends, and contradictions"
 tags: [Production]
 connections:
   - target: llm-service
     type: runs_on
-  - target: thematic-coding-framework
-    type: references
 ---
 
 ## Capability
 
-Interprets quantitative and qualitative research findings, identifying trends, anomalies, and meaningful patterns.
+Analyses a collection of research findings to identify patterns, trends, contradictions, and gaps. Synthesises results across multiple studies to build a coherent narrative about the state of knowledge on a topic.
 
 ## When to Use
 
-- Making sense of survey results or experimental data
-- Synthesising findings across multiple studies
-- Drawing conclusions from mixed-methods research
+- Synthesising findings from multiple papers in a literature review
+- Identifying areas of consensus and disagreement in a research field
+- Spotting methodological trends or shifts over time
+- Preparing the synthesis section of a review paper
 
 ## Inputs
 
-Data tables, statistical outputs, qualitative coding summaries
+Collection of paper summaries, research question, thematic categories (if pre-defined)
 
 ## Outputs
 
-Interpretive summary: key patterns, statistical significance, practical significance, caveats, suggested follow-up analyses
+Synthesis report: identified themes, areas of agreement, contradictions, methodological trends, gaps in the literature, and suggested directions for future research

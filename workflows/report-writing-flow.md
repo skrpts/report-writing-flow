@@ -12,7 +12,9 @@ connections:
   - target: peer-review-draft
     type: uses
   - target: data-interpretation
-    type: uses
+    type: uses  - target: llm-service
+    type: runs_on
+
 metadata:
   estimated_duration: "15-30 minutes"
   trigger: manual
