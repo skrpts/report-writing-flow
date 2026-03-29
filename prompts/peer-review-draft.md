@@ -3,7 +3,7 @@ type: prompt
 id: peer-review-draft
 title: Peer Review Draft
 description: "Drafts constructive peer review feedback"
-tags: [Production, research:ethics, quality:review]
+tags: [Production, Academic, Review, Writing]
 connections:
   - target: llm-service
     type: runs_on

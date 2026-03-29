@@ -3,7 +3,7 @@ type: workflow
 id: report-writing-flow
 title: Report Writing Flow
 description: "Outline, draft sections, peer review, and format"
-tags: [Production, research:ethics, quality:review]
+tags: [Production, Academic, Review, Writing]
 connections:
   - target: thesis-outline-generator
     type: uses

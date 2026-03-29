@@ -3,7 +3,7 @@ type: document
 id: research-protocol-template
 title: Research Protocol Template
 description: "Standard template for documenting research methodology"
-tags: [Production, writing:academic, data:quantitative]
+tags: [Production, Research, Writing]
 connections: []
 ---
 

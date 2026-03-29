@@ -3,7 +3,7 @@ type: asset
 id: thematic-coding-framework
 title: Analysis Framework — Thematic Coding
 description: "Template for qualitative thematic analysis"
-tags: [Production, analysis:qualitative, data:qualitative]
+tags: [Production, Data, Writing]
 connections: []
 ---
 

@@ -3,7 +3,7 @@ type: source
 id: apa-7th-edition
 title: APA 7th Edition
 description: "Citation and formatting guidelines per the APA Publication Manual, 7th edition"
-tags: [Production, research:citations, writing:academic]
+tags: [Production, Citations, Writing]
 connections: []
 ---
 
