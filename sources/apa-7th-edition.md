@@ -1,9 +1,9 @@
 ---
 type: source
-id: apa-7th-edition-style-guide
-title: APA 7th Edition Style Guide
-description: "American Psychological Association citation and formatting standards"
-tags: [Production, Academic Writing]
+id: apa-7th-edition
+title: APA 7th Edition
+description: "Citation and formatting guidelines per the APA Publication Manual, 7th edition"
+tags: [Production]
 connections: []
 ---
 

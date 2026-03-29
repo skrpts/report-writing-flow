@@ -12,8 +12,11 @@ connections:
   - target: peer-review-draft
     type: uses
   - target: data-interpretation
-    type: uses  - target: llm-service
+    type: uses
+  - target: llm-service
     type: runs_on
+  - target: apa-7th-edition
+    type: references
 
 metadata:
   estimated_duration: "15-30 minutes"
