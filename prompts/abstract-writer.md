@@ -3,7 +3,7 @@ type: prompt
 id: abstract-writer
 title: Abstract Writer
 description: "Writes a structured abstract for a research paper"
-tags: [Production]
+tags: [Production, writing:academic, data:quantitative]
 connections:
   - target: llm-service
     type: runs_on

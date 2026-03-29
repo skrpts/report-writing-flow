@@ -3,7 +3,7 @@ type: prompt
 id: thesis-outline-generator
 title: Thesis Outline Generator
 description: "Creates a detailed thesis or dissertation outline"
-tags: [Production]
+tags: [Production, writing:academic, data:quantitative]
 connections:
   - target: llm-service
     type: runs_on
