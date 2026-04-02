@@ -21,6 +21,10 @@ connections:
 metadata:
   estimated_duration: "15-30 minutes"
   trigger: manual
+  - target: research-protocol-template
+    type: references
+  - target: thematic-coding-framework
+    type: references
 ---
 
 ## Overview

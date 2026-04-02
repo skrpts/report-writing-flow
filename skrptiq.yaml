@@ -3,7 +3,7 @@ id: "31c0f63a-e2f6-4f31-bd12-67539427fe6d"
 name: "report-writing-flow"
 display_name: "Report Writing Flow"
 description: "Outline, draft sections, peer review, and format"
-version: "1.0.0"
+version: "1.0.2"
 engine: ">=1.0.0"
 
 # --- Attribution ---
