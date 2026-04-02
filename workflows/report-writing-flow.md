@@ -17,14 +17,13 @@ connections:
     type: runs_on
   - target: apa-7th-edition
     type: references
-
   - target: research-protocol-template
+    type: references
   - target: thematic-coding-framework
+    type: references
 metadata:
   estimated_duration: "15-30 minutes"
   trigger: manual
-    type: references
-    type: references
 ---
 
 ## Overview
