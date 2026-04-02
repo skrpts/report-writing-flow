@@ -3,7 +3,7 @@ type: source
 id: apa-7th-edition
 title: APA 7th Edition
 description: "Citation and formatting guidelines per the APA Publication Manual, 7th edition"
-tags: [Production, Citations, Writing]
+tags: [Production, Academic, Citations]
 connections: []
 ---
 
@@ -49,13 +49,13 @@ connections: []
 ### General Principles
 - Alphabetical order by first author's surname.
 - Hanging indent: first line flush left, subsequent lines indented 1.27 cm (0.5 in).
-- Include DOIs wherever available, formatted as a full URL: https://doi.org/xxxxx
+- Include DOIs wherever available, formatted as a full URL: `https://doi.org/xxxxx`
 - For online sources without a DOI, include the URL. Do not add a full stop after a URL or DOI.
 
 ### Journal Article
-Author, A. A., & Author, B. B. (Year). Title of the article in sentence case. *Title of the Journal in Title Case and Italics*, *Volume*(Issue), page–page. https://doi.org/xxxxx
+Author, A. A., & Author, B. B. (Year). Title of the article in sentence case. *Title of the Journal in Title Case and Italics*, *Volume*(Issue), page–page. `https://doi.org/xxxxx`
 
-> Smith, J. R., & Jones, L. M. (2023). The effects of sleep deprivation on working memory performance. *Journal of Cognitive Psychology*, *45*(3), 112–128. https://doi.org/10.1234/jcp.2023.5678
+> Smith, J. R., & Jones, L. M. (2023). The effects of sleep deprivation on working memory performance. *Journal of Cognitive Psychology*, *45*(3), 112–128. `https://doi.org/10.1234/jcp.2023.5678`
 
 ### Book
 Author, A. A. (Year). *Title of the book in sentence case and italics* (Edition, if not the first). Publisher.
@@ -63,14 +63,14 @@ Author, A. A. (Year). *Title of the book in sentence case and italics* (Edition,
 > Kahneman, D. (2011). *Thinking, fast and slow*. Penguin Books.
 
 ### Edited Book Chapter
-Author, A. A. (Year). Title of the chapter. In E. E. Editor (Ed.), *Title of the book* (pp. page–page). Publisher. https://doi.org/xxxxx
+Author, A. A. (Year). Title of the chapter. In E. E. Editor (Ed.), *Title of the book* (pp. page–page). Publisher. `https://doi.org/xxxxx`
 
 > Chen, W. (2022). Cognitive load in multimedia learning. In R. Mayer & L. Fiorella (Eds.), *The Cambridge handbook of multimedia learning* (3rd ed., pp. 89–106). Cambridge University Press.
 
 ### Website
 Author or Organisation. (Year, Month Day). *Title of the page or article*. Site Name. URL
 
-> World Health Organisation. (2024, March 12). *Mental health in the workplace*. https://www.who.int/news-room/fact-sheets/detail/mental-health-at-work
+> World Health Organisation. (2024, March 12). *Mental health in the workplace*. `https://www.who.int/news-room/fact-sheets/detail/mental-health-at-work`
 
 - If the author and site name are the same, omit the site name.
 - If no date is available, use (n.d.).
@@ -78,7 +78,7 @@ Author or Organisation. (Year, Month Day). *Title of the page or article*. Site 
 ### Report
 Author or Organisation. (Year). *Title of the report* (Report No. if available). Publisher. URL
 
-> Office for National Statistics. (2023). *Internet access: Households and individuals, Great Britain 2023* (Statistical Bulletin). https://www.ons.gov.uk/releases/internetaccesshouseholdsandindividuals2023
+> Office for National Statistics. (2023). *Internet access: Households and individuals, Great Britain 2023* (Statistical Bulletin). `https://www.ons.gov.uk/releases/internetaccesshouseholdsandindividuals2023`
 
 ## Document Formatting
 
