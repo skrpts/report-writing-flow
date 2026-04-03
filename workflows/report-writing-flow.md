@@ -21,6 +21,10 @@ connections:
     type: references
   - target: thematic-coding-framework
     type: references
+  - target: language-polish
+    type: uses
+  - target: evidence-claim-check
+    type: uses
 metadata:
   estimated_duration: "15-30 minutes"
   trigger: manual

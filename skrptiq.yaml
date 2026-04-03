@@ -3,7 +3,7 @@ id: "31c0f63a-e2f6-4f31-bd12-67539427fe6d"
 name: "report-writing-flow"
 display_name: "Report Writing Flow"
 description: "Outline, draft sections, peer review, and format"
-version: "1.0.4"
+version: "1.1.0"
 engine: ">=1.0.0"
 
 # --- Attribution ---
@@ -33,11 +33,11 @@ requires:
 
 # --- Contents ---
 contents:
-  skills: 1
+  skills: 3
   prompts: 3
   workflows: 1
   services: 1
   sources: 1
   documents: 1
   assets: 1
-  total: 9
+  total: 11
