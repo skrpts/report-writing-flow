@@ -5,12 +5,6 @@ title: Report Writing Flow
 description: "Outline, draft sections, peer review, and format"
 tags: [Production, Academic, Review, Writing]
 connections:
-  - target: thesis-outline-generator
-    type: uses
-  - target: abstract-writer
-    type: uses
-  - target: peer-review-draft
-    type: uses
   - target: data-interpretation
     type: uses
   - target: llm-service
