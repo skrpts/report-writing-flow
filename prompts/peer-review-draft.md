@@ -20,4 +20,4 @@ You are an experienced academic reviewer. Provide constructive peer review feedb
 Be specific, cite section/page numbers, and suggest concrete improvements.
 
 ## Manuscript
-{{steps.abstract-writer.output}}
+{{steps.Abstract Writer.output}}
