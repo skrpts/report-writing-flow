@@ -4,6 +4,13 @@ id: abstract-writer
 title: Abstract Writer
 description: "Writes a structured abstract for a research paper"
 tags: [Production, Academic, Writing]
+inputs:
+  completed_draft_or_near:
+    label: "Completed Draft"
+    description: "The completed or near-completed draft"
+    example: "[Paste draft here]"
+    required: true
+    type: text
 connections:
   - target: llm-service
     type: runs_on
