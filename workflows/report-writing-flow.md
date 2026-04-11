@@ -22,6 +22,12 @@ connections:
 metadata:
   estimated_duration: "15-30 minutes"
   trigger: manual
+execution:
+  - skill: "data-interpretation"
+  - skill: "language-polish"
+    input_from: "data-interpretation"
+  - skill: "evidence-claim-check"
+    input_from: "data-interpretation"
 ---
 
 ## Overview
