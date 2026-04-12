@@ -24,10 +24,13 @@ metadata:
   trigger: manual
 execution:
   - skill: "data-interpretation"
+    step_type: "synthesis"
   - skill: "language-polish"
     input_from: "data-interpretation"
+    step_type: "content"
   - skill: "evidence-claim-check"
     input_from: "data-interpretation"
+    step_type: "review"
 ---
 
 ## Overview
