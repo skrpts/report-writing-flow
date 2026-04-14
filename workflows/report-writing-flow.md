@@ -22,6 +22,11 @@ connections:
 metadata:
   estimated_duration: "15-30 minutes"
   trigger: manual
+output_step: "language-polish"
+composite_steps:
+  - "data-interpretation"
+  - "language-polish"
+  - "evidence-claim-check"
 execution:
   - skill: "data-interpretation"
     step_type: "synthesis"
