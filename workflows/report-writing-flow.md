@@ -29,11 +29,14 @@ composite_steps:
   - "evidence-claim-check"
 execution:
   - skill: "data-interpretation"
+    prompt: "interpret-data"
     step_type: "synthesis"
   - parallel:
     - skill: "evidence-claim-check"
+      prompt: "check-evidence-claims"
       step_type: "review"
   - skill: "language-polish"
+    prompt: "polish-language"
     step_type: "content"
 ---
 
