@@ -35,9 +35,14 @@ execution:
     - skill: "evidence-claim-check"
       prompt: "check-evidence-claims"
       step_type: "review"
+      context:
+        evidence_rigour: ""
   - skill: "language-polish"
     prompt: "polish-language"
     step_type: "content"
+    context:
+      voice_profile: ""
+      grammar_strictness: ""
 ---
 
 ## Overview
