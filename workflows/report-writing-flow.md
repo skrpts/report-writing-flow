@@ -36,13 +36,13 @@ execution:
       prompt: "check-evidence-claims"
       step_type: "review"
       context:
-        evidence_rigour: ""
+        evidence_rigour: "Standard"
   - skill: "language-polish"
     prompt: "polish-language"
     step_type: "content"
     context:
-      voice_profile: ""
-      grammar_strictness: ""
+      voice_profile: "Neutral professional tone"
+      grammar_strictness: "Professional"
 ---
 
 ## Overview
