@@ -4,20 +4,6 @@ id: interpret-data
 title: "Interpret Research Data"
 description: "Identifies patterns, trends, and contradictions across research findings"
 tags: [Production, Academic, Research]
-inputs:
-  research_data:
-    label: "Research Data"
-    description: "The research findings, data, or source material to interpret"
-    example: "Paste your research data or findings here"
-    required: true
-    type: file
-    accept: ".txt,.md,.csv,.docx,.pdf"
-  report_topic:
-    label: "Report Topic"
-    description: "The topic or question this report addresses"
-    example: "Impact of remote work on team productivity across distributed engineering teams"
-    required: true
-    type: text
 connections:
   - target: data-interpretation
     type: derived_from
@@ -35,14 +21,6 @@ Drives the data interpretation skill.
 You are a research analyst. Interpret the findings below, identifying patterns and building a synthesis.
 
 ### Research Findings
-
-**Topic:** {{input.report_topic}}
-
-### Research Data
-
-{{input.research_data}}
-
-### Analysis
 
 {{steps.previous.output}}
 
