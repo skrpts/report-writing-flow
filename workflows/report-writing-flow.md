@@ -31,15 +31,18 @@ execution:
   - skill: "data-interpretation"
     prompt: "interpret-data"
     step_type: "synthesis"
+    output: { name: "interpretation", type: "text" }
   - parallel:
     - skill: "evidence-claim-check"
       prompt: "check-evidence-claims"
       step_type: "review"
+      output: { name: "evidence_report", type: "text" }
       context:
         evidence_rigour: "Standard"
   - skill: "language-polish"
     prompt: "polish-language"
     step_type: "content"
+    output: { name: "polished_report", type: "text" }
     context:
       voice_profile: "Neutral professional tone"
       grammar_strictness: "Professional"

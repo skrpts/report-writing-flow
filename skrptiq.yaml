@@ -3,7 +3,7 @@ id: "31c0f63a-e2f6-4f31-bd12-67539427fe6d"
 name: "report-writing-flow"
 display_name: "Report Writing Flow"
 description: "Outline, draft sections, peer review, and format"
-version: "1.1.23"
+version: "1.1.24"
 engine: ">=0.1.0"
 
 # --- Attribution ---
@@ -80,3 +80,17 @@ contents:
   documents: 0
   assets: 1
   total: 2
+
+security:
+  status: "pass"
+  scanned_at: "2026-07-03T11:06:52.653Z"
+  scanner_version: "3.3.0"
+  syntactic: "pass"
+  structural: "pass"
+  detected:
+    services: ["llm-service"]
+    permissions: []
+    data_handling: []
+  undeclared: []
+  warnings: []
+  report_url: "https://hub.skrptiq.ai/skrpts/report-writing-flow/security"
