@@ -5,6 +5,8 @@ title: Report Writing Flow
 description: "Outline, draft sections, peer review, and format"
 tags: [Production, Academic, Review, Writing]
 connections:
+  - target: report-intake
+    type: uses
   - target: data-interpretation
     type: uses
   - target: llm-service
@@ -24,10 +26,15 @@ metadata:
   trigger: manual
 output_step: "language-polish"
 composite_steps:
+  - "report-intake"
   - "data-interpretation"
   - "language-polish"
   - "evidence-claim-check"
 execution:
+  - skill: "report-intake"
+    prompt: "report-brief"
+    step_type: "synthesis"
+    output: { name: "research_brief", type: "text" }
   - skill: "data-interpretation"
     prompt: "interpret-data"
     step_type: "synthesis"
@@ -46,6 +53,10 @@ execution:
     context:
       voice_profile: "Neutral professional tone"
       grammar_strictness: "Professional"
+    bindings:
+      source:
+        from_step: "Data Interpretation"
+        field: output
 ---
 
 ## Overview
@@ -101,7 +112,9 @@ Invoke the **data-interpretation** skill to identify patterns, assess significan
 | `{{input.research_topic}}` | Yes | The research topic for the thesis or report | `The impact of remote working on team cohesion in UK tech startups` |
 | `{{input.research_questions}}` | Yes | The research questions guiding the report | `How does remote working affect team communication frequency?` |
 | `{{input.methodology}}` | Yes | The research methodology used | `Qualitative case study with semi-structured interviews` |
-| `{{input.completed_draft_or_near}}` | No | Completed draft or near-final content for abstract writing and peer review | `Paste your full draft here` |
+| `{{input.completed_draft_or_near}}` | No | Completed draft or near-final content, findings, or data to interpret and polish | `Paste your full draft, findings, or data here` |
+
+These inputs are collected by the **report-intake** step, which assembles them into a structured brief that the interpretation, evidence-checking, and language-polish steps build on.
 
 ## Outputs
 
@@ -117,7 +130,7 @@ Invoke the **data-interpretation** skill to identify patterns, assess significan
 Before running this workflow:
 
 1. No external services required — paste your content directly and provide any supporting context as inputs or source nodes.
-2. Review the included documents, assets, or source nodes and customise them to match your team, brand, or domain conventions where needed.
+2. Review the included documents, assets, or source nodes and customize them to match your team, brand, or domain conventions where needed.
 3. No specific AI provider or API key is required beyond your configured skrptiq LLM provider.
 
 ## Provider Notes
@@ -131,9 +144,9 @@ Before running this workflow:
 To test this workflow immediately after import:
 
 ```
-Research Topic: "Paste the relevant brief, notes, source material, or dataset here."
-Research Questions: "Paste the relevant brief, notes, source material, or dataset here."
-Methodology: "Paste the relevant brief, notes, source material, or dataset here."
-Completed Draft Or Near: "Paste the relevant brief, notes, source material, or dataset here."
+Research Topic: "The impact of remote working on team cohesion in UK tech startups"
+Research Questions: "How does remote working affect team communication frequency? How does it shape informal knowledge-sharing?"
+Methodology: "Qualitative case study with semi-structured interviews across six startups"
+Completed Draft Or Near: "Interviews suggest cohesion holds where teams keep deliberate synchronous rituals, but informal knowledge-sharing drops sharply without them..."
 ```
 
