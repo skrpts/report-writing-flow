@@ -7,7 +7,7 @@ tags: [Production, Academic, Review, Writing]
 connections:
   - target: report-intake
     type: uses
-  - target: data-interpretation
+  - target: report-authoring
     type: uses
   - target: llm-service
     type: runs_on
@@ -27,7 +27,7 @@ metadata:
 output_step: "language-polish"
 composite_steps:
   - "report-intake"
-  - "data-interpretation"
+  - "report-authoring"
   - "language-polish"
   - "evidence-claim-check"
 execution:
@@ -35,10 +35,28 @@ execution:
     prompt: "report-brief"
     step_type: "synthesis"
     output: { name: "research_brief", type: "text" }
-  - skill: "data-interpretation"
-    prompt: "interpret-data"
+    bindings:
+      completed_draft_or_near:
+        from_input: "completed_draft_or_near"
+  - skill: "report-authoring"
+    prompt: "outline-report"
     step_type: "synthesis"
-    output: { name: "interpretation", type: "text" }
+    output: { name: "outline", type: "text" }
+  - skill: "report-authoring"
+    prompt: "draft-report"
+    step_type: "content"
+    output: { name: "draft", type: "text" }
+    bindings:
+      brief:
+        from_step: "Report Intake"
+        field: output
+  - skill: "language-polish"
+    prompt: "polish-report"
+    step_type: "content"
+    output: { name: "polished_report", type: "text" }
+    context:
+      voice_profile: "Neutral professional tone"
+      grammar_strictness: "Professional"
   - parallel:
     - skill: "evidence-claim-check"
       prompt: "check-evidence-claims"
@@ -46,64 +64,55 @@ execution:
       output: { name: "evidence_report", type: "text" }
       context:
         evidence_rigour: "Standard"
-  - skill: "language-polish"
-    prompt: "polish-language"
-    step_type: "content"
-    output: { name: "polished_report", type: "text" }
-    context:
-      voice_profile: "Neutral professional tone"
-      grammar_strictness: "Professional"
-    bindings:
-      source:
-        from_step: "Data Interpretation"
-        field: output
 ---
 
 ## Overview
 
-This workflow guides the production of a structured academic report or thesis chapter, from initial outlining through to peer-reviewed final draft. It combines structural planning with iterative review to produce publication-ready academic writing.
+This workflow produces a structured academic report or thesis chapter from a brief: it collects your topic, research questions, methodology, and any draft or data, generates a section outline, drafts the report in full prose, and polishes it into a publication-ready final. It **writes the report** — it does not merely review or summarize your input.
 
 ## Pipeline Stages
 
-### Stage 1: Thesis Outline
+### Stage 1: Report Brief
 
-**Input:** Research topic, research questions, methodology
+**Input:** Research topic, research questions, methodology, and (optionally) a completed draft, findings, or data
 
-Invoke the **thesis-outline-generator** prompt to produce a chapter-by-chapter outline with section breakdowns, word count targets, and key sources to engage with.
+The **report-intake** step (via the **report-brief** prompt) collects the inputs and assembles them into a single structured brief for the stages that follow.
 
-**Output:** Detailed structural outline.
+**Output:** A structured research brief.
 
-### Stage 2: Abstract & Summary
+### Stage 2: Outline
 
-**Input:** Completed draft or near-final content
+**Input:** The report brief
 
-Invoke the **abstract-writer** prompt to produce a structured abstract covering background, objective, methods, results, and conclusion.
+The **report-authoring** skill (via the **outline-report** prompt) turns the brief into a section or chapter outline — headings, per-section purpose, key points to cover, and rough word targets.
 
-**Output:** Publication-ready abstract (200–300 words).
+**Output:** A structured section outline.
 
-### Stage 3: Peer Review
+### Stage 3: Draft
 
-**Input:** Complete manuscript draft
+**Input:** The outline, grounded in the original brief
 
-Invoke the **peer-review-draft** prompt to generate constructive feedback covering strengths, major concerns, minor concerns, and a recommendation.
+The **report-authoring** skill (via the **draft-report** prompt) expands the outline into full drafted prose, section by section, grounded in the topic, research questions, methodology, and any supplied material.
 
-**Gate:** Major concerns must be addressed before proceeding.
+**Output:** A complete drafted report.
 
-**Output:** Annotated review with specific improvement suggestions.
+### Stage 4: Language Polish
 
-### Stage 4: Data Analysis
+**Input:** The drafted report
 
-**Input:** Research data, statistical outputs, qualitative coding summaries
+The **language-polish** skill (via the **polish-report** prompt) polishes the draft for clarity, grammar, and consistency, producing the final report.
 
-Invoke the **data-interpretation** skill to identify patterns, assess significance, and suggest follow-up analyses for the results section.
+**Output:** The publication-ready report (the workflow's final output).
 
-**Output:** Interpretive summary for incorporation into the report.
+### Advisory: Evidence Check
+
+Running alongside the final stage, the **evidence-claim-check** skill (via the **check-evidence-claims** prompt) flags claims in the report that may need stronger support or a citation. It is advisory and does not block the output.
 
 ## Error Handling
 
-- If the outline lacks sufficient depth, provide more detail on the research questions and methodology
-- If peer review flags fundamental structural issues, return to Stage 1 rather than patching
-- If data interpretation reveals unexpected findings, consider whether they warrant revising the research questions
+- If the outline lacks sufficient depth, provide more detail in the research questions and methodology and re-run
+- If the draft drifts from the brief, tighten the brief inputs — the draft is grounded in what the brief carries
+- If the evidence check flags unsupported claims, supply the missing sources or data as part of the draft input
 
 ## Inputs
 
@@ -112,18 +121,18 @@ Invoke the **data-interpretation** skill to identify patterns, assess significan
 | `{{input.research_topic}}` | Yes | The research topic for the thesis or report | `The impact of remote working on team cohesion in UK tech startups` |
 | `{{input.research_questions}}` | Yes | The research questions guiding the report | `How does remote working affect team communication frequency?` |
 | `{{input.methodology}}` | Yes | The research methodology used | `Qualitative case study with semi-structured interviews` |
-| `{{input.completed_draft_or_near}}` | No | Completed draft or near-final content, findings, or data to interpret and polish | `Paste your full draft, findings, or data here` |
+| `{{input.completed_draft_or_near}}` | No | Completed draft, findings, or data to build the report on — paste text or upload a file (`.txt`, `.md`, `.docx`, `.pdf`) | `Paste your draft, or upload a .txt/.md/.docx/.pdf` |
 
-These inputs are collected by the **report-intake** step, which assembles them into a structured brief that the interpretation, evidence-checking, and language-polish steps build on.
+These inputs are collected by the **report-intake** step, which assembles them into a structured brief that the outline, draft, and polish stages build on.
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| Detailed structural outline | Detailed structural outline |
-| Publication-ready abstract | Publication-ready abstract |
-| Annotated review | Annotated review with specific improvement suggestions |
-| Interpretive summary for incorporation into the report | Interpretive summary for incorporation into the report |
+| Polished report | The publication-ready report — the workflow's final output |
+| Section outline | The structured outline the draft was built from |
+| Report draft | The full drafted report before polishing |
+| Evidence report | Advisory list of claims that may need stronger support or citation |
 
 ## Setup
 

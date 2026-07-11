@@ -25,10 +25,11 @@ inputs:
     type: string
   completed_draft_or_near:
     label: "Completed Draft or Near-Final Content"
-    description: "Completed draft or near-final content, findings, or data to interpret and polish"
-    example: "Paste your full draft, findings, or data here"
+    description: "Completed draft, findings, or data to build the report on — paste text or upload a file"
+    example: "Paste your draft, or upload a .txt/.md/.docx/.pdf"
     required: false
-    type: string
+    type: file
+    accept: ".txt,.md,.docx,.pdf"
 metadata:
   output_format: markdown
   prompt_type: task
@@ -36,7 +37,7 @@ metadata:
 
 ## Purpose
 
-Collects the report inputs and assembles them into a single structured brief that the downstream interpretation, evidence-checking, and language-polish steps build on.
+Collects the report inputs and assembles them into a single structured brief that the downstream outline, draft, and polish stages build on.
 
 ## Prompt
 
@@ -56,7 +57,7 @@ You are a research editor preparing a report brief. Organize the material below 
 
 ### Draft, Findings, or Data
 
-{{input.completed_draft_or_near}}
+{{step.context.completed_draft_or_near}}
 
 ### Instructions
 
